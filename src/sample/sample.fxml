@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="381.0" prefWidth="709.0">
+            <children>
+                <Label layoutX="300.0" layoutY="17.0" text="Простое число" />
+                <TextField fx:id="TextFieldPrimeNumber" layoutX="300.0" layoutY="34.0" promptText="Prime number" />
+                <Label layoutX="300.0" layoutY="59.0" text="Целое число" />
+                <TextField fx:id="TextFieldInteger" layoutX="300.0" layoutY="76.0" promptText="Integer" />
+                <Label layoutX="300.0" layoutY="101.0" text="K" />
+                <TextField fx:id="TextFieldK" layoutX="300.0" layoutY="118.0" promptText="K" />
+                <Label layoutX="300.0" layoutY="142.0" text="X" />
+                <TextField fx:id="TextFieldX" layoutX="300.0" layoutY="158.0" promptText="X" />
+                <Label layoutX="300.0" layoutY="183.0" text="H" />
+                <TextField fx:id="TextFieldH" layoutX="300.0" layoutY="200.0" promptText="H" />
+                <TextField fx:id="TextFieldM" editable="false" layoutX="300.0" layoutY="326.0" />
+                <TextArea fx:id="TextAreaText" layoutX="25.0" layoutY="42.0" prefHeight="275.0" prefWidth="237.0" />
+                <TextField fx:id="TextFieldS" editable="false" layoutX="300.0" layoutY="241.0" />
+                <TextField fx:id="TextFieldR" editable="false" layoutX="300.0" layoutY="284.0" />
+                <Button fx:id="ButtonCalc" layoutX="25.0" layoutY="339.0" mnemonicParsing="false" onAction="#Calc" text="Зашифровать" />
+                <Label layoutX="300.0" layoutY="225.0" text="S" />
+                <Label layoutX="300.0" layoutY="263.0" text="R" />
+                <Label layoutX="300.0" layoutY="306.0" text="M" />
+                <TextArea fx:id="TextAreaTextForDecoding" layoutX="494.0" layoutY="42.0" prefHeight="275.0" prefWidth="200.0" />
+                <Button fx:id="ButtonCheck" layoutX="494.0" layoutY="339.0" mnemonicParsing="false" onAction="#Check" text="Дешифрировать" />
+
+            <Label layoutX="25.0" layoutY="17.0" text="Сообщение :" />
+            <Label layoutX="494.0" layoutY="17.0" text="Проверяемое сообщение :" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
