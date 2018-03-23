@@ -33,12 +33,12 @@
                 <TextArea fx:id="TextAreaText" layoutX="25.0" layoutY="42.0" prefHeight="275.0" prefWidth="237.0" />
                 <TextField fx:id="TextFieldS" editable="false" layoutX="300.0" layoutY="241.0" />
                 <TextField fx:id="TextFieldR" editable="false" layoutX="300.0" layoutY="284.0" />
-                <Button fx:id="ButtonCalc" layoutX="25.0" layoutY="339.0" mnemonicParsing="false" onAction="#Calc" text="Зашифровать" />
+                <Button fx:id="ButtonCalc" layoutX="25.0" layoutY="339.0" mnemonicParsing="false" onAction="#encryption" text="Зашифровать" />
                 <Label layoutX="300.0" layoutY="225.0" text="S" />
                 <Label layoutX="300.0" layoutY="263.0" text="R" />
                 <Label layoutX="300.0" layoutY="306.0" text="M" />
                 <TextArea fx:id="TextAreaTextForDecoding" layoutX="494.0" layoutY="42.0" prefHeight="275.0" prefWidth="200.0" />
-                <Button fx:id="ButtonCheck" layoutX="494.0" layoutY="339.0" mnemonicParsing="false" onAction="#Check" text="Дешифрировать" />
+                <Button fx:id="ButtonCheck" layoutX="494.0" layoutY="339.0" mnemonicParsing="false" onAction="#decryption" text="Дешифрировать" />
 
             <Label layoutX="25.0" layoutY="17.0" text="Сообщение :" />
             <Label layoutX="494.0" layoutY="17.0" text="Проверяемое сообщение :" />

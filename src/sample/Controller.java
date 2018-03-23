@@ -40,22 +40,8 @@ public class Controller {
 
     private String letters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 
-    private void printInformation(int a, int b) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-
-        alert.setTitle("Вывод");
-        alert.setHeaderText(null);
-        if (a == b) {
-            alert.setContentText("Достоверность сообщения подтверждена!");
-        } else {
-            alert.setContentText("Достоверность сообщения нарушена!");
-
-        }
-        alert.showAndWait();
-    }
-
     @FXML
-    void Calc(ActionEvent event) {
+    void encryption(ActionEvent event) {
         x = Integer.parseInt(TextFieldX.getText());
         g = Integer.parseInt(TextFieldInteger.getText());
         p = Integer.parseInt(TextFieldPrimeNumber.getText());
@@ -75,20 +61,44 @@ public class Controller {
     }
 
     @FXML
-    void Check(ActionEvent event) {
+    void decryption(ActionEvent event) {
         int s = sender.getS();
         int r = sender.getR();
         Recipient recipient = new Recipient(s, r);
         recipient.findM(TextAreaTextForDecoding, letters, h, p);
         int m = recipient.getM();
-        long rs = (long) Math.pow(r, s);
-        BigInteger yb = BigInteger.valueOf(y);
-        BigInteger yr = yb.pow(r);
-        BigInteger aBig = yr.multiply(BigInteger.valueOf(rs));
-        aBig = aBig.mod(BigInteger.valueOf(p));
-        int a = aBig.intValue();
+        int a = calculateA(r, s);
+        int b = calculateB(m);
+        checkMessage(a, b);
+    }
+
+    private int calculateB(int m) {
         int b = (int) Math.pow(g, m);
         b = b % p;
-        printInformation(a, b);
+        return b;
+    }
+
+    private int calculateA(int r, int s) {
+        int a;
+        long rs = (long) Math.pow(r, s);
+        BigInteger yBig = BigInteger.valueOf(y);
+        BigInteger yr = yBig.pow(r);
+        BigInteger aBig = yr.multiply(BigInteger.valueOf(rs));
+        aBig = aBig.mod(BigInteger.valueOf(p));
+        a = aBig.intValue();
+        return a;
+    }
+
+    private void checkMessage(int a, int b) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Вывод");
+        alert.setHeaderText(null);
+        if (a == b) {
+            alert.setContentText("Достоверность сообщения подтверждена!");
+        } else {
+            alert.setContentText("Достоверность сообщения нарушена!");
+
+        }
+        alert.showAndWait();
     }
 }
